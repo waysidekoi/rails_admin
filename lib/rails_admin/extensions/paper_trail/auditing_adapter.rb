@@ -38,7 +38,7 @@ module RailsAdmin
           :message => :event
         }
 
-        def initialize(controller, user_class = 'User', version_class = '::Version')
+        def initialize(controller, user_class = 'User', version_class = 'PaperTrail::Version')
           raise "PaperTrail not found" unless defined?(PaperTrail)
           @controller = controller
           @user_class = user_class.to_s.constantize rescue "Please set up Papertrail's user model explicitely. Ex: config.audit_with :paper_trail, 'User'"
